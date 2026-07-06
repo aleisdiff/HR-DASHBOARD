@@ -9,6 +9,37 @@ Production-style portfolio project focused on enterprise workflow modeling, role
 - Database: SQLite (default)
 - Deployment: Local, Docker, CI-ready
 
+## Public Demo (GitHub)
+
+Use this section when publishing the project publicly.
+
+- Repository visibility: Public
+- Live demo (frontend): add your deployed URL here
+- API base URL (backend): add your deployed API URL here
+
+Public-safe checklist:
+
+- Keep `backend/.env` private (never commit real secrets)
+- Keep webhook values private (`SLACK_LEAVE_UPDATES_WEBHOOK_URL`, `TEAMS_LEAVE_UPDATES_WEBHOOK_URL`)
+- Keep framework secrets private (`APP_KEY`, database credentials, tokens)
+- Commit only `backend/.env.example` with placeholder values
+
+Suggested README snippet after deployment:
+
+```md
+## Live Demo
+
+- Frontend: https://your-frontend-url
+- Backend API: https://your-backend-url/api
+
+### Demo Login
+
+- admin@company.test / password123
+- hr@company.test / password123
+- manager@company.test / password123
+- employee@company.test / password123
+```
+
 ## Implemented Feature Set
 
 ### Authentication and Security

@@ -14,7 +14,7 @@ Production-style portfolio project focused on enterprise workflow modeling, role
 Use this section when publishing the project publicly.
 
 - Repository visibility: Public
-- Live demo (frontend): add your deployed URL here
+- Live demo (frontend): https://hr-dashboard-three-mauve.vercel.app/
 - API base URL (backend): add your deployed API URL here
 
 Public-safe checklist:
@@ -29,7 +29,7 @@ Suggested README snippet after deployment:
 ```md
 ## Live Demo
 
-- Frontend: https://your-frontend-url
+- Frontend: https://hr-dashboard-three-mauve.vercel.app/
 - Backend API: https://your-backend-url/api
 
 ### Demo Login

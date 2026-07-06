@@ -1,0 +1,167 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --ink-900: #131721;
+  --ink-700: #2a3347;
+  --surface-0: #f7f7f2;
+  --surface-1: #ffffff;
+  --brand-600: #1f8a70;
+  --brand-500: #2fb889;
+  --accent-500: #ff8a5b;
+  --line-soft: rgba(20, 27, 44, 0.12);
+
+  color: var(--ink-900);
+  background:
+    radial-gradient(circle at 6% 8%, rgba(47, 184, 137, 0.18), transparent 26%),
+    radial-gradient(circle at 88% 6%, rgba(255, 138, 91, 0.16), transparent 22%),
+    linear-gradient(155deg, #fefdf8 0%, #f2f5f0 44%, #eef3fb 100%);
+  font-family: 'Space Grotesk', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:root[data-theme='dark'] {
+  --ink-900: #e6edf5;
+  --ink-700: #b7c3d9;
+  --surface-0: #0c1324;
+  --surface-1: #141c31;
+  --line-soft: rgba(201, 216, 245, 0.18);
+
+  color: var(--ink-900);
+  background:
+    radial-gradient(circle at 6% 8%, rgba(47, 184, 137, 0.16), transparent 26%),
+    radial-gradient(circle at 88% 6%, rgba(255, 138, 91, 0.14), transparent 22%),
+    linear-gradient(155deg, #070c18 0%, #0f1830 44%, #111b2d 100%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  margin: 0;
+  color: var(--ink-900);
+  transition: background 260ms ease, color 200ms ease;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Manrope', 'Space Grotesk', 'Segoe UI', sans-serif;
+}
+
+.dash-shell {
+  position: relative;
+}
+
+.dash-shell::before,
+.dash-shell::after {
+  content: '';
+  position: fixed;
+  z-index: -1;
+  border-radius: 9999px;
+  filter: blur(42px);
+  pointer-events: none;
+}
+
+.dash-shell::before {
+  width: 280px;
+  height: 280px;
+  top: -70px;
+  right: -60px;
+  background: rgba(47, 184, 137, 0.24);
+}
+
+.dash-shell::after {
+  width: 220px;
+  height: 220px;
+  bottom: -48px;
+  left: -42px;
+  background: rgba(255, 138, 91, 0.2);
+}
+
+.glass-card {
+  border: 1px solid var(--line-soft);
+  background: linear-gradient(170deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 253, 0.88));
+  backdrop-filter: blur(14px);
+  box-shadow: 0 18px 35px rgba(17, 24, 39, 0.07);
+  transition: background 260ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+:root[data-theme='dark'] .glass-card {
+  background: linear-gradient(170deg, rgba(24, 36, 63, 0.86), rgba(12, 20, 38, 0.88));
+  box-shadow: 0 22px 40px rgba(1, 5, 12, 0.45);
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.rise-in {
+  animation: riseIn 520ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.page-shift {
+  animation: pageShift 420ms cubic-bezier(0.2, 0.9, 0.3, 1) both;
+}
+
+.skeleton {
+  border-radius: 14px;
+  background: linear-gradient(90deg, rgba(148, 163, 184, 0.2), rgba(148, 163, 184, 0.35), rgba(148, 163, 184, 0.2));
+  background-size: 280% 100%;
+  animation: skeletonPulse 1.4s ease-in-out infinite;
+}
+
+:root[data-theme='dark'] .skeleton {
+  background: linear-gradient(90deg, rgba(89, 108, 145, 0.25), rgba(89, 108, 145, 0.5), rgba(89, 108, 145, 0.25));
+  background-size: 280% 100%;
+}
+
+@keyframes riseIn {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pageShift {
+  from {
+    opacity: 0;
+    transform: scale(0.99) translateY(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+  }
+}
+
+@keyframes skeletonPulse {
+  from {
+    background-position: 100% 50%;
+  }
+
+  to {
+    background-position: 0 50%;
+  }
+}

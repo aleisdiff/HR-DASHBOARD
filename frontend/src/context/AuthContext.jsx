@@ -10,19 +10,19 @@ export function AuthProvider({ children }) {
   const [loading, setLoading] = useState(true)
 
   const fetchUser = async () => {
-    const response = await api.get('/me')
+    const response = await api.get('/api/me')
     setUser(response.data.user)
     return response.data.user
   }
 
   const login = async (credentials) => {
     await ensureCsrfCookie()
-    await api.post('/login', credentials)
+    await api.post('/api/login', credentials)
     return fetchUser()
   }
 
   const logout = async () => {
-    await api.post('/logout')
+    await api.post('/api/logout')
     setUser(null)
   }
 
@@ -31,7 +31,7 @@ export function AuthProvider({ children }) {
 
     const bootstrap = async () => {
       try {
-        const response = await api.get('/me')
+        const response = await api.get('/api/me')
 
         if (isActive) {
           setUser(response.data.user)

@@ -24,6 +24,13 @@ Public-safe checklist:
 - Keep framework secrets private (`APP_KEY`, database credentials, tokens)
 - Commit only `backend/.env.example` with placeholder values
 
+Production environment variables:
+
+- Frontend Vercel: `VITE_API_BASE_URL=https://your-backend-domain/api`
+- Backend: `FRONTEND_URL=https://hr-dashboard-three-mauve.vercel.app`
+- Backend: `SANCTUM_STATEFUL_DOMAINS=hr-dashboard-three-mauve.vercel.app`
+- Backend: `SESSION_DOMAIN=.your-backend-domain`
+
 Suggested README snippet after deployment:
 
 ```md

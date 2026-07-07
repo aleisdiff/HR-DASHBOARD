@@ -7,7 +7,9 @@ return [
         'sanctum/csrf-cookie',
     ],
 
-    'allowed_methods' => ['*'],
+    'allowed_methods' => [
+        '*',
+    ],
 
     'allowed_origins' => [
         'https://hr-dashboard-g4pvc2658-aleisdiffs-projects.vercel.app',
@@ -18,7 +20,9 @@ return [
 
     'allowed_origins_patterns' => [],
 
-    'allowed_headers' => ['*'],
+    'allowed_headers' => [
+        '*',
+    ],
 
     'exposed_headers' => [],
 

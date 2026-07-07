@@ -10,9 +10,10 @@ return [
     'allowed_methods' => ['*'],
 
     'allowed_origins' => [
-        env('FRONTEND_URL', 'http://localhost:5173'),
-        'http://127.0.0.1:5173',
+        'https://hr-dashboard-g4pvc2658-aleisdiffs-projects.vercel.app',
+        env('FRONTEND_URL'),
         'http://localhost:5173',
+        'http://127.0.0.1:5173',
     ],
 
     'allowed_origins_patterns' => [],
